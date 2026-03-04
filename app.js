@@ -22,7 +22,7 @@ const port = process.env.PORT || 9000;
 // const MONGODB_URI = "mongodb://127.0.0.1:27017/fullstack_es6";
 
 const MONGODB_URI =
-  "mongodb+srv://nhatsang0101:48nJ1AfSQzAeKHoC@cluster0.aup360f.mongodb.net/e_learning";
+  "mongodb+srv://patel:Hello@123@e-learning-cloud.rws1trh.mongodb.net/?appName=e-learning-cloud";
 
 // app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
