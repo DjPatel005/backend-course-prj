@@ -1,3 +1,15 @@
+// ======= Global Error Handlers (Top of the file) =======
+process.on("uncaughtException", (err) => {
+  console.error("UNCAUGHT EXCEPTION ❌", err);
+  process.exit(1);
+});
+
+process.on("unhandledRejection", (reason, promise) => {
+  console.error("UNHANDLED REJECTION ❌", reason);
+  process.exit(1);
+});
+
+// ======= Main App Code =======
 try {
   const path = require("path");
   const { v4: uuidv4 } = require("uuid");
@@ -20,7 +32,7 @@ try {
   const app = express();
   const port = process.env.PORT || 9000;
 
-  const MONGODB_URI = "mongodb+srv://patel:Hello@123@e-learning-cloud.rws1trh.mongodb.net/?appName=e-learning-cloud";
+  const MONGODB_URI = process.env.MONGO_URI;
   if (!MONGODB_URI) throw new Error("MONGO_URI is not defined");
 
   app.use(bodyParser.json());
